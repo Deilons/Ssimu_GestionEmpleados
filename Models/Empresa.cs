@@ -14,6 +14,8 @@ public class Empresa
     public string Direccion { get; set; }
     public List<Empleado> Empleados = new List<Empleado>();
 
+    
+
     // Constructor
     public Empresa(string nombre, string direccion)
     {
