@@ -29,7 +29,7 @@ public class Empleado
 
     private double CalcularBonificacion(double Salario)
     {
-        double bonificacion = Salario / 100* 10;
+        double bonificacion = Salario +(Salario / 100* 10);
         
         return bonificacion;
     }
