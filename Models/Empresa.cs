@@ -71,5 +71,62 @@ public class Empresa
             Console.WriteLine();
         }
     }
+    public void ActualizarEmpleado()
+    {
+        Console.WriteLine("Id del empleado a actualizar: ");
+        int id = int.Parse(Console.ReadLine());
+
+        Empleado empleado = Empleados.Find(e => e.Id == id);
+        if (empleado != null)
+        {
+            Console.WriteLine("Nombre: ");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("Apellidos: ");
+            string apellidos = Console.ReadLine();
+            Console.WriteLine("Número de identificación: ");
+            string numeroDeIdentificacion = Console.ReadLine();
+            Console.WriteLine("Edad: ");
+            byte edad = byte.Parse(Console.ReadLine());
+            Console.WriteLine("Posición: ");
+            string posicion = Console.ReadLine();
+            Console.WriteLine("Salario: ");
+            double salario = double.Parse(Console.ReadLine());
+
+            Empleado nuevoEmpleado = new Empleado(id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
+            Empleados[Empleados.IndexOf(empleado)] = nuevoEmpleado;
+            Console.WriteLine("Empleado actualizado correctamente.");
+        }
+        else
+        {
+            Console.WriteLine("Empleado no encontrado.");
+        }
+    }
+
+    public void BuscarEmpleado()
+    {
+        Console.WriteLine("Numero de identificación del empleado a buscar: ");
+
+        string numeroDeIdentificacion = Console.ReadLine();
+        Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
+        if (empleado != null)
+        {
+            Console.WriteLine("Empleado encontrado: ");
+            empleado.MostrarInformacion();
+        }
+        else
+        {
+            Console.WriteLine("pleado no encontrado.");
+        }
+    }
+
+    public void MostrarEmpleadosPorPosicion()
+    {
+        Console.WriteLine("Posición de los empleados a mostrar: ");
+        string posicion = Console.ReadLine();
+        Empleados.FindAll(e => e.Posicion == posicion).
+            ForEach(e => e.MostrarInformacion());
+    }
+
 }
+
 
