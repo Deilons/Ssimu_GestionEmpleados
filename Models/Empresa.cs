@@ -13,7 +13,7 @@ public class Empresa
 
     public string Direccion { get; set; }
     public List<Empleado> Empleados = new List<Empleado>();
-
+    public List<Cliente> Clientes = new List<Cliente>();
 
 
     // Constructor
@@ -22,9 +22,10 @@ public class Empresa
         Nombre = nombre;
         Direccion = direccion;
         Empleados = new List<Empleado>();
+        Clientes = new List<Cliente>();
     }
 
-    // Metodos
+    // Metodos Empleado
 
     public void AgregarEmpleado()
     {   
@@ -55,8 +56,15 @@ public class Empresa
         Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
         if (empleado != null)
         {
-            Empleados.Remove(empleado);
-            Console.WriteLine("Empleado eliminado correctamente.");
+            Console.WriteLine("Este es el empleado que deseas eliminar: ");
+            empleado.MostrarInformacion();
+            Console.WriteLine("S/N");
+            string respuesta = Console.ReadLine();
+            if (respuesta == "S" || respuesta == "s")
+            {   
+                Empleados.Remove(empleado);
+                Console.WriteLine("Empleado eliminado correctamente.");
+            }
         }
         else
         {
@@ -125,6 +133,59 @@ public class Empresa
         string posicion = Console.ReadLine();
         Empleados.FindAll(e => e.Posicion == posicion).
             ForEach(e => e.MostrarInformacion());
+    }
+
+    // Metodos Cliente
+
+    public void AgregarCliente()
+    {
+        Console.WriteLine("Nombre del cliente: ");
+        string nombre = Console.ReadLine();
+        Console.WriteLine("Apellidos del cliente: ");
+        string apellidos = Console.ReadLine();
+        Console.WriteLine("Edad: ");
+        byte edad = byte.Parse(Console.ReadLine());
+        Console.WriteLine("Email: ");
+        string email = Console.ReadLine();
+        Console.WriteLine("Teléfono: ");
+        string telefono = Console.ReadLine();
+
+        Cliente nuevoCliente = new Cliente(nombre, apellidos, edad, email, telefono);
+        Clientes.Add(nuevoCliente);
+    }
+
+    public void EliminarCliente()
+    {
+        Console.WriteLine("Nombre del cliente a eliminar: ");
+        string nombre = Console.ReadLine();
+
+        Cliente cliente = Clientes.Find(c => c.Nombre == nombre);
+        if (cliente != null)
+        {
+            Console.WriteLine("Este es el cliente que deseas eliminar: ");
+            cliente.MostrarInformacion();
+            Console.WriteLine("S/N");
+            string respuesta = Console.ReadLine();
+            if (respuesta == "S" || respuesta == "s")
+            {   
+                Clientes.Remove(cliente);
+                Console.WriteLine("Cliente eliminado correctamente.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Cliente no encontrado.");
+        }
+    }
+
+    public void MostrarClientes()
+    {
+        Console.WriteLine("Clientes:");
+        foreach (Cliente cliente in Clientes)
+        {
+            cliente.MostrarInformacion();
+            Console.WriteLine();
+        }
     }
 
 }
