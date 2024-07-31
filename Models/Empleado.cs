@@ -26,7 +26,7 @@ public class Empleado
         Salario = salario;
     }
 
-    private static double CalcularBonificacion( double Salario)
+    private static double CalcularBonificacion(double Salario)
     {
         double bonificacion = Salario / 100* 10;
         
@@ -44,5 +44,5 @@ public class Empleado
         Posición: {Posicion}
         Salario: {CalcularBonificacion(Salario)}
         ");
-    } 
+    }
 }
