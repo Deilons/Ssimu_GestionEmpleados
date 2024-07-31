@@ -14,7 +14,7 @@ public class Empresa
     public string Direccion { get; set; }
     public List<Empleado> Empleados = new List<Empleado>();
 
-    
+
 
     // Constructor
     public Empresa(string nombre, string direccion)
@@ -40,7 +40,7 @@ public class Empresa
         Console.WriteLine("Posición: ");
         string posicion = Console.ReadLine();
         Console.WriteLine("Salario: ");
-        double salario = double.Parse(Console.ReadLine());
+        decimal salario = decimal.Parse(Console.ReadLine());
 
         Empleado nuevoEmpleado = new Empleado(id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
 
@@ -90,7 +90,7 @@ public class Empresa
             Console.WriteLine("Posición: ");
             string posicion = Console.ReadLine();
             Console.WriteLine("Salario: ");
-            double salario = double.Parse(Console.ReadLine());
+            decimal salario = decimal.Parse(Console.ReadLine());
 
             Empleado nuevoEmpleado = new Empleado(empleado.Id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
             Empleados[Empleados.IndexOf(empleado)] = nuevoEmpleado;
