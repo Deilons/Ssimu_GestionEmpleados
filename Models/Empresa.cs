@@ -24,9 +24,9 @@ public class Empresa
 
     // Metodos
 
-    public void AgregarEmpleado(Empleado empleado)
+    public void AgregarEmpleado()
     {   
-        int id = Empleados.Count + 1;
+        Guid id = Guid.NewGuid();
         Console.WriteLine("Nombre del empleado: ");
         string nombre = Console.ReadLine();
         Console.WriteLine("Apellidos del empleado: ");
@@ -47,10 +47,10 @@ public class Empresa
 
     public void EliminarEmpleado()
     {
-        Console.WriteLine("Id del empleado a eliminar: ");
-        int id = int.Parse(Console.ReadLine());
+        Console.WriteLine("Numero de identificación del empleado a eliminar: ");
+        string numeroDeIdentificacion = Console.ReadLine();
 
-        Empleado empleado = Empleados.Find(e => e.Id == id);
+        Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
         if (empleado != null)
         {
             Empleados.Remove(empleado);
@@ -74,17 +74,15 @@ public class Empresa
     public void ActualizarEmpleado()
     {
         Console.WriteLine("Id del empleado a actualizar: ");
-        int id = int.Parse(Console.ReadLine());
+        string numeroDeIdentificacion = Console.ReadLine();
 
-        Empleado empleado = Empleados.Find(e => e.Id == id);
+        Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
         if (empleado != null)
         {
             Console.WriteLine("Nombre: ");
             string nombre = Console.ReadLine();
             Console.WriteLine("Apellidos: ");
             string apellidos = Console.ReadLine();
-            Console.WriteLine("Número de identificación: ");
-            string numeroDeIdentificacion = Console.ReadLine();
             Console.WriteLine("Edad: ");
             byte edad = byte.Parse(Console.ReadLine());
             Console.WriteLine("Posición: ");
@@ -92,7 +90,7 @@ public class Empresa
             Console.WriteLine("Salario: ");
             double salario = double.Parse(Console.ReadLine());
 
-            Empleado nuevoEmpleado = new Empleado(id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
+            Empleado nuevoEmpleado = new Empleado(empleado.Id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
             Empleados[Empleados.IndexOf(empleado)] = nuevoEmpleado;
             Console.WriteLine("Empleado actualizado correctamente.");
         }

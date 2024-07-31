@@ -7,7 +7,8 @@ namespace Ssimu_GestionEmpleados.Models;
 
 public class Empleado
 {
-    public int Id { get; set; }
+    public Guid Id = Guid.NewGuid();
+    
     public string Nombre { get; set; }
     public string Apellidos { get; set; }
     public string NumeroDeIdentificacion { get; set; }
@@ -15,7 +16,7 @@ public class Empleado
     public string Posicion { get; set; }
     public double Salario { get; set; }
 
-    public Empleado(int id, string nombre, string apellidos, string numeroDeIdentificacion, byte edad, string posicion, double salario)
+    public Empleado(Guid id, string nombre, string apellidos, string numeroDeIdentificacion, byte edad, string posicion, double salario)
     {
         Id = id;
         Nombre = nombre;
@@ -26,7 +27,7 @@ public class Empleado
         Salario = salario;
     }
 
-    private static double CalcularBonificacion(double Salario)
+    private double CalcularBonificacion(double Salario)
     {
         double bonificacion = Salario / 100* 10;
         
