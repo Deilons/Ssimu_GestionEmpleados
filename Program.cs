@@ -12,6 +12,7 @@ while (salir == false)
     Console.Clear();
     Administracion.MostrarTitulo("BIENVENIDO A SSIMU");
     Administracion.MostrarPieDePagina("SSIMU - 2022");
+    Administracion.Separador();
     Console.WriteLine("1. Agregar un nuevo empleado");
     Console.WriteLine("2. Eliminar un empleado");
     Console.WriteLine("3. Mostrar todos los empleados");
