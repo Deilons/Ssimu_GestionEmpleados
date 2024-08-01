@@ -8,9 +8,9 @@ namespace Ssimu_GestionEmpleados.Models;
 public static class Administracion
 {
     
-    public static string Titulo = "Sistema de gestión de empleura";
+    public static string Titulo;
 
-    public static string PieDePagina = "Copyright © 2022. Todos los derechos reservados.";
+    public static string PieDePagina;
 
     public static Cliente CrearCliente()
     {
