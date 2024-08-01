@@ -8,9 +8,6 @@ namespace Ssimu_GestionEmpleados.Models;
 public static class Administracion
 {
     
-    public static string Titulo;
-
-    public static string PieDePagina;
 
     public static Cliente CrearCliente()
     {
@@ -52,16 +49,16 @@ public static class Administracion
         return nuevoEmpleado;
     }
 
-    public static string MostrarTitulo(string titulo)
+    public static string MostrarTitulo(string Titulo)
     {
         Console.WriteLine(Titulo);
-        return titulo;
+        return Titulo;
     }
 
-    public static string MostrarPieDePagina(string pieDePagina)
+    public static string MostrarPieDePagina(string PieDePagina)
     {
         Console.WriteLine(PieDePagina);
-        return pieDePagina;
+        return PieDePagina;
     }
 
     public static void Separador()
