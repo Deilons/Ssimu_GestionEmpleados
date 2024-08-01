@@ -27,4 +27,24 @@ public static class Administracion
 
         return nuevoCliente;
         }
+    
+    public static Empleado CrearEmpleado()
+    {
+        Guid id = Guid.NewGuid();
+        Console.WriteLine("Nombre del empleado: ");
+        string? nombre = Console.ReadLine();
+        Console.WriteLine("Apellidos del empleado: ");
+        string? apellidos = Console.ReadLine();
+        Console.WriteLine("Número de identificación: ");
+        string? numeroDeIdentificacion = Console.ReadLine();
+        Console.WriteLine("Edad: ");
+        byte edad = byte.Parse(Console.ReadLine());
+        Console.WriteLine("Posición: ");
+        string? posicion = Console.ReadLine();
+        Console.WriteLine("Salario: ");
+        decimal salario = decimal.Parse(Console.ReadLine());
+
+        Empleado nuevoEmpleado = new Empleado(id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
+        return nuevoEmpleado;
+    }
 }

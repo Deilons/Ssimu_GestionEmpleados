@@ -26,7 +26,8 @@ while (salir == false)
     {
         case 1:
             Console.Clear();
-            empresa.AgregarEmpleado();
+            var nuevoEmpleado = Administracion.CrearEmpleado();
+            empresa.AgregarEmpleado(nuevoEmpleado);
             Console.WriteLine("Presiona una tecla para continuar...");
             Console.ReadKey();
             break;

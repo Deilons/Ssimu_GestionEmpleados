@@ -10,7 +10,6 @@ namespace Ssimu_GestionEmpleados.Models;
 public class Empresa
 {
     public string Nombre { get; set; }
-
     public string Direccion { get; set; }
     public List<Empleado> Empleados = new List<Empleado>();
     public List<Cliente> Clientes = new List<Cliente>();
@@ -27,23 +26,9 @@ public class Empresa
 
     // Metodos Empleado
 
-    public void AgregarEmpleado()
+    public void AgregarEmpleado(Empleado nuevoEmpleado)
     {   
-        Guid id = Guid.NewGuid();
-        Console.WriteLine("Nombre del empleado: ");
-        string? nombre = Console.ReadLine();
-        Console.WriteLine("Apellidos del empleado: ");
-        string? apellidos = Console.ReadLine();
-        Console.WriteLine("Número de identificación: ");
-        string? numeroDeIdentificacion = Console.ReadLine();
-        Console.WriteLine("Edad: ");
-        byte edad = byte.Parse(Console.ReadLine());
-        Console.WriteLine("Posición: ");
-        string? posicion = Console.ReadLine();
-        Console.WriteLine("Salario: ");
-        decimal salario = decimal.Parse(Console.ReadLine());
-
-        Empleado nuevoEmpleado = new Empleado(id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
+        
 
         Empleados.Add(nuevoEmpleado);
     }
