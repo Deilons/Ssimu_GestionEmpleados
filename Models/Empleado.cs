@@ -8,12 +8,11 @@ namespace Ssimu_GestionEmpleados.Models;
 public class Empleado : Persona
 {
     
-    public Guid Id = Guid.NewGuid();
     public string NumeroDeIdentificacion { get; set; }
     public string Posicion { get; set; }
     public decimal Salario { get; set; }
 
-    public Empleado(Guid id, string nombre, string apellidos, string numeroDeIdentificacion, int edad, string posicion, decimal salario) : base ( nombre , apellidos, edad)
+    public Empleado(Guid id, string nombre, string apellidos, string numeroDeIdentificacion, int edad, string posicion, decimal salario) : base (id,nombre , apellidos, edad)
     {
         Id = id;
         Nombre = nombre;

@@ -92,7 +92,7 @@ public class Empresa
             Console.WriteLine("Nombre: ");
             string? nombre = Console.ReadLine();
             Console.WriteLine("Apellidos: ");
-            string apellidos = Console.ReadLine();
+            string? apellidos = Console.ReadLine();
             Console.WriteLine("Edad: ");
             byte edad = byte.Parse(Console.ReadLine());
             Console.WriteLine("Posición: ");
