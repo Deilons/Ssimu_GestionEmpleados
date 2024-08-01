@@ -29,7 +29,6 @@ public static class Administracion
         string? telefono = Console.ReadLine();
 
         Cliente nuevoCliente = new Cliente(id, nombre, apellidos, edad, numeroDeIdentificacion ,email, telefono);
-
         return nuevoCliente;
         }
     

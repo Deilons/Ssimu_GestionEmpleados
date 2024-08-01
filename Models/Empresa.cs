@@ -28,8 +28,6 @@ public class Empresa
 
     public void AgregarEmpleado(Empleado nuevoEmpleado)
     {   
-        
-
         Empleados.Add(nuevoEmpleado);
     }
 
@@ -66,15 +64,16 @@ public class Empresa
             Console.WriteLine();
         }
     }
-    /*
+    
     public void ActualizarEmpleado()
     {
-        Console.WriteLine("Id del empleado a actualizar: ");
+        Console.WriteLine("Numero de identificación del empleado a actualizar: ");
         string? numeroDeIdentificacion = Console.ReadLine();
 
-        Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
+        Empleado empleado = Empleados.Find(e => e.GetNumeroDeIdentificacion() == numeroDeIdentificacion);
         if (empleado != null)
-        {
+        {   
+            Guid id = Guid.Parse(empleado.GetId());
             Console.WriteLine("Nombre: ");
             string? nombre = Console.ReadLine();
             Console.WriteLine("Apellidos: ");
@@ -86,7 +85,7 @@ public class Empresa
             Console.WriteLine("Salario: ");
             decimal salario = decimal.Parse(Console.ReadLine());
 
-            Empleado nuevoEmpleado = new Empleado(empleado.Id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
+            Empleado nuevoEmpleado = new Empleado( id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
             Empleados[Empleados.IndexOf(empleado)] = nuevoEmpleado;
             Console.WriteLine("Empleado actualizado correctamente.");
         }
@@ -95,7 +94,7 @@ public class Empresa
             Console.WriteLine("Empleado no encontrado.");
         }
     }
-*/
+
     public void BuscarEmpleado()
     {
         Console.WriteLine("Numero de identificación del empleado a buscar: ");
@@ -125,10 +124,9 @@ public class Empresa
 
     public void AgregarCliente(Cliente nuevoCliente)
     {   
-        
         Clientes.Add(nuevoCliente);
     }
-/*
+
     public void EliminarCliente()
     {
         Console.WriteLine("Numero de identificación del cliente a eliminar: ");
@@ -152,7 +150,7 @@ public class Empresa
             Console.WriteLine("Cliente no encontrado.");
         }
     }
-*/
+
     public void MostrarClientes()
     {
         Console.WriteLine("Clientes:");

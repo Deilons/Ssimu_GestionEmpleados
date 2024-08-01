@@ -29,6 +29,10 @@ namespace Ssimu_GestionEmpleados.Models
         {
             return NumeroDeIdentificacion;
         }
+        public string GetId()
+        {
+            return Id.ToString();
+        }
     }
 
 }
