@@ -88,7 +88,7 @@ while (salir == false)
 
         case 10:
             Console.WriteLine("Seguro que quieres salir? S/N");
-            string respuesta = Console.ReadLine();
+            string? respuesta = Console.ReadLine();
             if (respuesta == "S" || respuesta == "s")
             {
                 Console.WriteLine("Hasta pronto!");
@@ -96,7 +96,7 @@ while (salir == false)
             }
             break;
         default:
-            Console.WriteLine("Opción inválida.");
+            Console.WriteLine("Opción inválida. Inténtalo de nuevo.");
             break;
     }
 }
