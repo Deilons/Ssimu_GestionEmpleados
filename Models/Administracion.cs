@@ -7,6 +7,11 @@ namespace Ssimu_GestionEmpleados.Models;
 
 public static class Administracion
 {
+    
+    public static string Titulo = "Sistema de gestión de empleura";
+
+    public static string PieDePagina = "Copyright © 2022. Todos los derechos reservados.";
+
     public static Cliente CrearCliente()
     {
         Guid id = Guid.NewGuid();
@@ -46,5 +51,22 @@ public static class Administracion
 
         Empleado nuevoEmpleado = new Empleado(id, nombre, apellidos, numeroDeIdentificacion, edad, posicion, salario);
         return nuevoEmpleado;
+    }
+
+    public static string MostrarTitulo(string titulo)
+    {
+        Console.WriteLine(Titulo);
+        return titulo;
+    }
+
+    public static string MostrarPieDePagina(string pieDePagina)
+    {
+        Console.WriteLine(PieDePagina);
+        return pieDePagina;
+    }
+
+    public static void Separador()
+    {
+        Console.WriteLine();
     }
 }

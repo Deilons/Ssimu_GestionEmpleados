@@ -70,7 +70,6 @@ while (salir == false)
         case 7:
             Console.Clear();
             var nuevoCliente = Administracion.CrearCliente();
-
             empresa.AgregarCliente(nuevoCliente);
             Console.WriteLine("Presiona una tecla para continuar...");
             Console.ReadKey();
