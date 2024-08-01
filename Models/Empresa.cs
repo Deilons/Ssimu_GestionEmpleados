@@ -81,6 +81,7 @@ public class Empresa
             Console.WriteLine();
         }
     }
+    /*
     public void ActualizarEmpleado()
     {
         Console.WriteLine("Id del empleado a actualizar: ");
@@ -109,7 +110,7 @@ public class Empresa
             Console.WriteLine("Empleado no encontrado.");
         }
     }
-
+*/
     public void BuscarEmpleado()
     {
         Console.WriteLine("Numero de identificación del empleado a buscar: ");
@@ -137,23 +138,12 @@ public class Empresa
 
     // Metodos Cliente
 
-    public void AgregarCliente()
-    {
-        Console.WriteLine("Nombre del cliente: ");
-        string? nombre = Console.ReadLine();
-        Console.WriteLine("Apellidos del cliente: ");
-        string? apellidos = Console.ReadLine();
-        Console.WriteLine("Edad: ");
-        byte edad = byte.Parse(Console.ReadLine());
-        Console.WriteLine("Email: ");
-        string? email = Console.ReadLine();
-        Console.WriteLine("Teléfono: ");
-        string? telefono = Console.ReadLine();
-
-        Cliente nuevoCliente = new Cliente(nombre, apellidos, edad, email, telefono);
+    public void AgregarCliente(Cliente nuevoCliente)
+    {   
+        
         Clientes.Add(nuevoCliente);
     }
-
+/*
     public void EliminarCliente()
     {
         Console.WriteLine("Nombre del cliente a eliminar: ");
@@ -177,7 +167,7 @@ public class Empresa
             Console.WriteLine("Cliente no encontrado.");
         }
     }
-
+*/
     public void MostrarClientes()
     {
         Console.WriteLine("Clientes:");

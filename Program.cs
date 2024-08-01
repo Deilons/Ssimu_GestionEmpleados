@@ -1,5 +1,6 @@
 ﻿using Ssimu_GestionEmpleados.Models;
 
+
 // crear un menu para interactuar con el programa
 
 bool salir = false;
@@ -46,7 +47,7 @@ while (salir == false)
 
         case 4:
             Console.Clear();
-            empresa.ActualizarEmpleado();
+            //empresa.ActualizarEmpleado();
             Console.WriteLine("Presiona una tecla para continuar...");
             Console.ReadKey();
             break;
@@ -67,14 +68,16 @@ while (salir == false)
 
         case 7:
             Console.Clear();
-            empresa.AgregarCliente();
+            var nuevoCliente = Administracion.CrearCliente();
+
+            empresa.AgregarCliente(nuevoCliente);
             Console.WriteLine("Presiona una tecla para continuar...");
             Console.ReadKey();
             break;
 
         case 8:
             Console.Clear();
-            empresa.EliminarCliente();
+            //empresa.EliminarCliente();
             Console.WriteLine("Presiona una tecla para continuar...");
             Console.ReadKey();
             break;
