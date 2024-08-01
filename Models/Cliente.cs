@@ -11,7 +11,7 @@ public class Cliente : Persona
 
     public string Telefono { get; set; }
 
-    public Cliente( Guid id ,string nombre, string apellidos, int edad, string email, string telefono) : base( id,nombre, apellidos, edad)
+    public Cliente(Guid id ,string nombre, string apellidos, int edad, string NumeroDeIdentificacion,string email, string telefono) : base( id,nombre, apellidos, edad, NumeroDeIdentificacion)
     {
         Email = email;
         Telefono = telefono;

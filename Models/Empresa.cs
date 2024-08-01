@@ -53,7 +53,7 @@ public class Empresa
         Console.WriteLine("Numero de identificación del empleado a eliminar: ");
         string numeroDeIdentificacion = Console.ReadLine();
 
-        Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
+        Empleado empleado = Empleados.Find(e => e.GetNumeroDeIdentificacion() == numeroDeIdentificacion);
         if (empleado != null)
         {
             Console.WriteLine("Este es el empleado que deseas eliminar: ");
@@ -116,7 +116,7 @@ public class Empresa
         Console.WriteLine("Numero de identificación del empleado a buscar: ");
 
         string? numeroDeIdentificacion = Console.ReadLine();
-        Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
+        Empleado empleado = Empleados.Find(e => e.GetNumeroDeIdentificacion() == numeroDeIdentificacion);
         if (empleado != null)
         {
             Console.WriteLine("Empleado encontrado: ");
@@ -146,10 +146,10 @@ public class Empresa
 /*
     public void EliminarCliente()
     {
-        Console.WriteLine("Nombre del cliente a eliminar: ");
-        string? nombre = Console.ReadLine();
+        Console.WriteLine("Numero de identificación del cliente a eliminar: ");
+        string? numeroDeIdentificacion = Console.ReadLine();
 
-        Cliente cliente = Clientes.Find(c => c.Nombre == nombre);
+        Cliente cliente = Clientes.Find(c => c.GetNumeroDeIdentificacion() == numeroDeIdentificacion);
         if (cliente != null)
         {
             Console.WriteLine("Este es el cliente que deseas eliminar: ");

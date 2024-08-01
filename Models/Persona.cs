@@ -12,16 +12,23 @@ namespace Ssimu_GestionEmpleados.Models
         protected string Nombre { get; set; }
         protected string Apellidos { get; set; }
         protected int Edad  { get; set; }
+        protected string NumeroDeIdentificacion { get; set; }
 
-        public Persona( Guid id ,string nombre, string apellidos, int edad)
+
+        public Persona( Guid id ,string nombre, string apellidos, int edad, string numeroDeIdentificacion)
         {   
             Id = id;
             Nombre = nombre;
             Apellidos = apellidos;
             Edad = edad;
+            NumeroDeIdentificacion = numeroDeIdentificacion;
         }
         public abstract void MostrarInformacion();
         
+        public string GetNumeroDeIdentificacion()
+        {
+            return NumeroDeIdentificacion;
+        }
     }
 
 }

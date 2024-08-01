@@ -16,12 +16,14 @@ public static class Administracion
         string? apellidos = Console.ReadLine();
         Console.WriteLine("Edad: ");
         byte edad = byte.Parse(Console.ReadLine());
+        Console.WriteLine("Número de identificación: ");
+        string? numeroDeIdentificacion = Console.ReadLine();
         Console.WriteLine("Email: ");
         string? email = Console.ReadLine();
         Console.WriteLine("Teléfono: ");
         string? telefono = Console.ReadLine();
 
-        Cliente nuevoCliente = new Cliente(id, nombre, apellidos, edad, email, telefono);
+        Cliente nuevoCliente = new Cliente(id, nombre, apellidos, edad, numeroDeIdentificacion ,email, telefono);
 
         return nuevoCliente;
         }
