@@ -48,7 +48,7 @@ while (salir == false)
 
         case 4:
             Console.Clear();
-            //empresa.ActualizarEmpleado();
+            empresa.ActualizarEmpleado();
             Console.WriteLine("Presiona una tecla para continuar...");
             Console.ReadKey();
             break;
@@ -77,7 +77,7 @@ while (salir == false)
 
         case 8:
             Console.Clear();
-            //empresa.EliminarCliente();
+            empresa.EliminarCliente();
             Console.WriteLine("Presiona una tecla para continuar...");
             Console.ReadKey();
             break;

@@ -23,6 +23,7 @@ public class Cliente : Persona
         Nombre: {Nombre}
         Apellidos: {Apellidos}
         Edad: {Edad}
+        Número de identificación: {NumeroDeIdentificacion}
         Email: {Email}
         Telefono: {Telefono}
         ");
