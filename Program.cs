@@ -10,8 +10,8 @@ Empresa empresa = new Empresa("SSIMU", "Calle 1");
 while (salir == false)
 {
     Console.Clear();
+    Administracion.Separador();
     Administracion.MostrarTitulo("BIENVENIDO A SSIMU");
-    Administracion.MostrarPieDePagina("SSIMU - 2022");
     Administracion.Separador();
     Console.WriteLine("1. Agregar un nuevo empleado");
     Console.WriteLine("2. Eliminar un empleado");
@@ -23,6 +23,8 @@ while (salir == false)
     Console.WriteLine("8. Eliminar un cliente");
     Console.WriteLine("9. Mostrar todos los clientes");
     Console.WriteLine("10. Salir");
+    Administracion.Separador();
+    Administracion.MostrarPieDePagina("SSIMU - 2022");
     Administracion.Separador();
     Console.Write("Elige una opción: ");
     int opcion = int.Parse(Console.ReadLine());
@@ -108,7 +110,9 @@ while (salir == false)
             string? respuesta = Console.ReadLine();
             if (respuesta == "S" || respuesta == "s")
             {
+                Administracion.Separador();
                 Console.WriteLine("Hasta pronto!");
+                Administracion.Separador();
                 salir = true;
             }
             break;
