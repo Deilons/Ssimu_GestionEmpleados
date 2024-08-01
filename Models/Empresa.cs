@@ -31,15 +31,15 @@ public class Empresa
     {   
         Guid id = Guid.NewGuid();
         Console.WriteLine("Nombre del empleado: ");
-        string nombre = Console.ReadLine();
+        string? nombre = Console.ReadLine();
         Console.WriteLine("Apellidos del empleado: ");
-        string apellidos = Console.ReadLine();
+        string? apellidos = Console.ReadLine();
         Console.WriteLine("Número de identificación: ");
-        string numeroDeIdentificacion = Console.ReadLine();
+        string? numeroDeIdentificacion = Console.ReadLine();
         Console.WriteLine("Edad: ");
         byte edad = byte.Parse(Console.ReadLine());
         Console.WriteLine("Posición: ");
-        string posicion = Console.ReadLine();
+        string? posicion = Console.ReadLine();
         Console.WriteLine("Salario: ");
         decimal salario = decimal.Parse(Console.ReadLine());
 
@@ -84,19 +84,19 @@ public class Empresa
     public void ActualizarEmpleado()
     {
         Console.WriteLine("Id del empleado a actualizar: ");
-        string numeroDeIdentificacion = Console.ReadLine();
+        string? numeroDeIdentificacion = Console.ReadLine();
 
         Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
         if (empleado != null)
         {
             Console.WriteLine("Nombre: ");
-            string nombre = Console.ReadLine();
+            string? nombre = Console.ReadLine();
             Console.WriteLine("Apellidos: ");
             string apellidos = Console.ReadLine();
             Console.WriteLine("Edad: ");
             byte edad = byte.Parse(Console.ReadLine());
             Console.WriteLine("Posición: ");
-            string posicion = Console.ReadLine();
+            string? posicion = Console.ReadLine();
             Console.WriteLine("Salario: ");
             decimal salario = decimal.Parse(Console.ReadLine());
 
@@ -114,7 +114,7 @@ public class Empresa
     {
         Console.WriteLine("Numero de identificación del empleado a buscar: ");
 
-        string numeroDeIdentificacion = Console.ReadLine();
+        string? numeroDeIdentificacion = Console.ReadLine();
         Empleado empleado = Empleados.Find(e => e.NumeroDeIdentificacion == numeroDeIdentificacion);
         if (empleado != null)
         {
@@ -130,7 +130,7 @@ public class Empresa
     public void MostrarEmpleadosPorPosicion()
     {
         Console.WriteLine("Posición de los empleados a mostrar: ");
-        string posicion = Console.ReadLine();
+        string? posicion = Console.ReadLine();
         Empleados.FindAll(e => e.Posicion == posicion).
             ForEach(e => e.MostrarInformacion());
     }
@@ -140,15 +140,15 @@ public class Empresa
     public void AgregarCliente()
     {
         Console.WriteLine("Nombre del cliente: ");
-        string nombre = Console.ReadLine();
+        string? nombre = Console.ReadLine();
         Console.WriteLine("Apellidos del cliente: ");
-        string apellidos = Console.ReadLine();
+        string? apellidos = Console.ReadLine();
         Console.WriteLine("Edad: ");
         byte edad = byte.Parse(Console.ReadLine());
         Console.WriteLine("Email: ");
-        string email = Console.ReadLine();
+        string? email = Console.ReadLine();
         Console.WriteLine("Teléfono: ");
-        string telefono = Console.ReadLine();
+        string? telefono = Console.ReadLine();
 
         Cliente nuevoCliente = new Cliente(nombre, apellidos, edad, email, telefono);
         Clientes.Add(nuevoCliente);
@@ -157,7 +157,7 @@ public class Empresa
     public void EliminarCliente()
     {
         Console.WriteLine("Nombre del cliente a eliminar: ");
-        string nombre = Console.ReadLine();
+        string? nombre = Console.ReadLine();
 
         Cliente cliente = Clientes.Find(c => c.Nombre == nombre);
         if (cliente != null)
@@ -165,7 +165,7 @@ public class Empresa
             Console.WriteLine("Este es el cliente que deseas eliminar: ");
             cliente.MostrarInformacion();
             Console.WriteLine("S/N");
-            string respuesta = Console.ReadLine();
+            string? respuesta = Console.ReadLine();
             if (respuesta == "S" || respuesta == "s")
             {   
                 Clientes.Remove(cliente);
